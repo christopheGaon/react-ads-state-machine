@@ -8,9 +8,12 @@ This proof of concept aim to build an ads component
 - the component display an M-Impact format displaying an image on the right side of the screen using animation
 
 # Installation
-just run 
 
-npm install
+clone the repository
+https://github.com/christopheGaon/react-ads-state-machine.git
+
+open the react-ads-state-machine directory
+just run : npm install
 
 PS: you may need to install gulp 
 npm install gulp --global
@@ -20,12 +23,13 @@ to the the projet
 open dist/index.html
 
 # Deploy
-For deploying the project , i use browserify in gulp file
+For deploying the project , i use browserify in gulp file.
+
 I use minification files of react and react dom to optimize the bundle
 
 the gulp file have tow task
-gulp compress : should compile the bundle in production env.
-gulp : should watch the src dir and compile the bundle in dev env.
+- gulp compress : should compile the bundle in production env.
+- gulp : should watch the src dir and compile the bundle in dev env.
 
 
 open dist/index.html
