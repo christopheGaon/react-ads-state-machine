@@ -8,9 +8,12 @@ This proof of concept aim to build an ads component
 - the component display an M-Impact format displaying an image on the right side of the screen using animation
 
 # Installation
-just run 
 
-npm install
+clone the repository
+https://github.com/christopheGaon/react-ads-state-machine.git
+
+open the react-ads-state-machine directory
+just run : npm install
 
 PS: you may need to install gulp 
 npm install gulp --global
