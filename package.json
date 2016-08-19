@@ -1,9 +1,16 @@
 {
-  "name": "ads state machin using react browserify gulp ",
+  "name": "ads-react-state-machin",
   "version": "0.0.1",
+  "browserify": {
+    "transform": [ "browserify-shim" ]
+  },
+  "browserify-shim": {
+    "react": "global:React",
+    "react-dom": "global:ReactDOM"
+  },
   "scripts": {
-    "watch":"gulp",
-    "build":"set NODE_ENV='production'&& gulp compress"
+    "watch": "gulp",
+    "build": "set NODE_ENV='production'&& gulp compress"
   },
   "dependencies": {
     "react": "^15.3.0",
@@ -14,6 +21,7 @@
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
     "browserify": "^13.1.0",
+    "browserify-shim": "^3.8.12",
     "gulp": "^3.9.1",
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^2.0.0",

@@ -5,11 +5,11 @@ var source = require('vinyl-source-stream');
 var uglify = require('gulp-uglify');
 var streamify = require('gulp-streamify');
 var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var pump = require('pump');
+
+
 /**
  * compress for production env
- * TODO: optimize framework externalise some js in vendors , gzip for compression
+ * TODO: optimize bundle using gzip for compression
  */
 gulp.task('compress', function () {
     /**
@@ -32,6 +32,8 @@ gulp.task('compress', function () {
      */
     return browserify({entries: './src/app.jsx', extensions: ['.jsx'], debug: false})
         .transform('babelify', {presets: ['es2015', 'react']})
+        .external("react")
+        .external("reat-dom")
         .bundle()
         .pipe(source('bundle.js'))
         .pipe(streamify(uglify()))
@@ -40,7 +42,7 @@ gulp.task('compress', function () {
         .on('error', function(err) {
             console.error('Error in compress task', err.toString());
         });
-})
+});
 /**
  * build task using in dev env
  * browserify app.jsx
